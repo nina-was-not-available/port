@@ -76,6 +76,7 @@ const Slide = styled.div<SlidePropsType>`
     box-shadow: 0px 0px 20px;
     z-index: 1;
     
+    
     ${SomeText} {
       opacity: 1;
       backdrop-filter: brightness(30%);
