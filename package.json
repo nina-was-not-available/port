@@ -2,7 +2,7 @@
   "name": "flexbox",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nina-was-not-available.github.io/portfolio",
+  "homepage": "https://nina-was-not-available.github.io/port",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
