@@ -1,35 +1,37 @@
 import React from 'react';
 import styled from "styled-components";
-import Navigation from "../../components/navigation/Navigation";
 import Conteiner from "../../components/Conteiner";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import theme from "../styles/Theme";
-import MobileHeader from "./mobileMenu/MobileHeader";
-export const Header = () => {
+import MobileHeader from "./headermenu/mobileMenu/MobileHeader";
+import {S} from './Header_Styles'
+import {DesktopMenu} from "./headermenu/desktopmenu/DesktopMenu";
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
+}, []);
+
     return (
-        <StyledHeader>
+        <S.Header>
             <Conteiner>
                 <FlexWrapper justify={'center'} align={'center'}>
-            <Navigation navigationItems={items}/>
-                    <MobileHeader navigationItems={items}/>
+                    {width < breakpoint ? <MobileHeader navigationItems={items}/>
+                                        :<DesktopMenu navigationItems={items}/>}
                 </FlexWrapper>
             </Conteiner>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
 const items = ['Home', 'About me', 'My potential skills', 'My future works',  'Contacts']
 
 
-const StyledHeader = styled.header`
-  background-color: ${theme.colors.text};
-  padding: 20px 0px;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-`
+
 
 export default Header;
 

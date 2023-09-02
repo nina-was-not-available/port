@@ -1,8 +1,22 @@
-import React from 'react';
 import styled from "styled-components";
-import violin from './../../image/violin.jpg'
-import theme from "../../../styles/Theme";
+import theme from "../../styles/Theme";
 
+//About
+
+const About = styled.section`
+ 
+`
+const Parts = styled.div`
+  height: 100%;
+  display: flex;
+  padding: 0px 30px 30px 30px;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+`
+
+//Part
 type StyledPart1PropsType = {
     text1?: string
     text2?: string
@@ -10,15 +24,6 @@ type StyledPart1PropsType = {
 }
 
 
-const Part1 = (props:StyledPart1PropsType) => {
-    return (
-        <StyledPart img={props.img}>
-            <Strelka></Strelka>
-            <Text>{props.text1}</Text>
-            <Description>{props.text2}</Description>
-        </StyledPart>
-    );
-};
 
 const Strelka = styled.div`
   width: 40px;
@@ -45,7 +50,7 @@ const Strelka = styled.div`
 `
 
 
-const StyledPart = styled.div<StyledPart1PropsType>`
+const Part = styled.div<StyledPart1PropsType>`
   display: flex;
   justify-content: center;
   opacity: 1;
@@ -107,5 +112,11 @@ const Description = styled.p`
   background-image: linear-gradient(to top, ${theme.colors.accent} 40%, transparent);
 `
 
-
-export default Part1;
+export const S = {
+    About,
+    Parts,
+    Strelka,
+    Part,
+    Text,
+    Description
+}

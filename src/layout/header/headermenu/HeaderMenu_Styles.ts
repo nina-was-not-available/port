@@ -1,45 +1,15 @@
-import React from 'react';
-import styled, {css} from "styled-components";
 import theme from "../../styles/Theme";
-import Conteiner from "../../../components/Conteiner";
-export const MobileHeader = (props: {navigationItems: Array<string>}) => {
-    return (
+import styled, {css} from "styled-components";
 
-        <StyledMobileHeader>
-            <BurgerButton isOpen={false}>
-                <span></span>
-            </BurgerButton>
-            <MobileMenuWrapper isOpen={false}>
-            <ul>
+//MobileMenu
 
-                {props.navigationItems.map((item, index)=>{
-                    return <li key={index}>
-                        <a href={''}>{item}</a>
-                    </li>
-                })}
-
-            </ul>
-            </MobileMenuWrapper>
-        </StyledMobileHeader>
-
-    );
-};
-
-const items = ['Home', 'About me', 'My potential skills', 'My future works',  'Contacts']
-
-
-const StyledMobileHeader = styled.header`
+const MobileHeader = styled.header`
   background-color: ${theme.colors.text};
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99999;
-  display: none;
-  
-  @media ${theme.media.tablet} {
-    display: block;
-  }
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
@@ -123,7 +93,25 @@ const MobileMenuWrapper = styled.div<{isOpen: boolean}>`
   }
 `
 
-export default MobileHeader;
+//DesktopMenu
 
+const DesktopMenu = styled.nav`
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  a {
+    color: ${theme.colors.text2};
+  }
 
+`
 
+export const S = {
+    MobileHeader,
+    BurgerButton,
+    MobileMenuWrapper,
+    DesktopMenu
+}

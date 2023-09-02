@@ -1,0 +1,39 @@
+import styled from "styled-components";
+import theme from "../../styles/Theme";
+
+const Contacts = styled.section`
+`
+const Form = styled.form`
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto;
+  
+  textarea {
+    resize: none;
+    height: 160px;
+  }
+`
+
+const Field = styled.input`
+  width: 100%;
+  background-color: ${theme.colors.primaryBg};
+  border: 1px solid ${theme.colors.text};
+  padding: 7px 15px;
+  font-family: "Nimbus Sans";
+  font-weight: 500;
+  font-size: 12px;
+  color: ${theme.colors.text};
+  &:focus-visible {
+  outline: 2px solid ${theme.colors.accent};
+}
+`
+
+export const S = {
+    Contacts,
+    Form,
+    Field
+}

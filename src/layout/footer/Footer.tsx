@@ -1,73 +1,51 @@
 import React from 'react';
-import styled from "styled-components";
 import {SectionTitle} from "../../components/SectionTitle";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import theme from "../styles/Theme";
 import FooterIcon from "./footericon/FooterIcon";
 import {IconWrapper} from "../../components/IconWrapper";
+import {S} from './Fooret_Styles'
+
+
+const socialItemData = [
+    {
+        href: 'https://www.instagram.com/nina_uprt/',
+        iconId: 'instagram'
+    },
+    {
+        href: 'https://t.me/ninamatushkina',
+        iconId: 'telegram'
+    },
+    {
+        href: 'https://vk.com/this_is_death',
+        iconId: 'vk'
+    },
+]
+
 
 const Footer = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <FlexWrapper direction={'column'} align={'center'}>
             <SectionTitle>Nina</SectionTitle>
-            <SocialList>
-                <SocialItem>
-                    <SocialLink href={'https://www.instagram.com/nina_uprt/'}>
-                        <IconWrapper>
-                            <FooterIcon iconId={'instagram'}/>
-                        </IconWrapper>
-
-                    </SocialLink>
-                </SocialItem>
-                <SocialItem>
-                    <SocialLink href={'https://t.me/ninamatushkina'}>
-                        <IconWrapper>
-                            <FooterIcon iconId={'telegram'}/>
-                        </IconWrapper>
-
-                    </SocialLink>
-                </SocialItem>
-                <SocialItem>
-
-                        <SocialLink href={'https://vk.com/this_is_death'}>
+            <S.SocialList>
+                {socialItemData.map((s, index) => {
+                    return (<S.SocialItem key={index}>
+                        <S.SocialLink href={s.href}>
                             <IconWrapper>
-                            <FooterIcon iconId={'vk'}/>
+                                <FooterIcon iconId={s.iconId}/>
                             </IconWrapper>
-                        </SocialLink>
-
-                </SocialItem>
-            </SocialList>
-                <Copyright>2023 Junior Nina, Happy Hacking!</Copyright>
+                        </S.SocialLink>
+                    </S.SocialItem>)
+                })}
+            </S.SocialList>
+                <S.Copyright>2023 Junior Nina, Happy Hacking!</S.Copyright>
             </FlexWrapper>
-        </StyledFooter>
+        </S.Footer>
     );
 };
 
 
-const StyledFooter = styled.footer`
-  background-color: ${theme.colors.text};
-  padding: 20px;
-`
-const SocialList = styled.ul`
-    list-style: none;
-    display: flex;
-`
-const SocialItem = styled.li`
 
-`
-
-const SocialLink = styled.a`
-  `
-
-
-
-
-
-const Copyright = styled.small`
-  color: ${theme.colors.text2};
-  margin-top: 20px;
-`
 
 
 export default Footer;
