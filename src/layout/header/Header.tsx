@@ -1,8 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
 import Conteiner from "../../components/Conteiner";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import theme from "../styles/Theme";
 import MobileHeader from "./headermenu/mobileMenu/MobileHeader";
 import {S} from './Header_Styles'
 import {DesktopMenu} from "./headermenu/desktopmenu/DesktopMenu";
@@ -20,15 +18,15 @@ export const Header: React.FC = () => {
         <S.Header>
             <Conteiner>
                 <FlexWrapper justify={'center'} align={'center'}>
-                    {width < breakpoint ? <MobileHeader navigationItems={items}/>
-                                        :<DesktopMenu navigationItems={items}/>}
+                    {width < breakpoint ? <MobileHeader/>
+                                        :<DesktopMenu/>}
                 </FlexWrapper>
             </Conteiner>
         </S.Header>
     );
 };
 
-const items = ['Home', 'About me', 'My potential skills', 'My future works',  'Contacts']
+
 
 
 

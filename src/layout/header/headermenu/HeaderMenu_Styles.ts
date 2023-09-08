@@ -1,5 +1,6 @@
 import theme from "../../styles/Theme";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
 
 //MobileMenu
 
@@ -10,13 +11,14 @@ const MobileHeader = styled.header`
   left: 0;
   right: 0;
   z-index: 99999;
+
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
   position: fixed;
   width: 200px;
   height: 200px;
-  top: -100px;
+  top: -120px;
   right: -100px;
   z-index: 999999999;
   
@@ -70,13 +72,13 @@ const MobileMenuWrapper = styled.div<{isOpen: boolean}>`
   right: 0;
   bottom: 0;
   z-index: 99999;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.6s;
   
-  ${props => props.isOpen && css<{isOpen: boolean}>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `}
+  
   
   ul {
     list-style: none;
@@ -84,14 +86,43 @@ const MobileMenuWrapper = styled.div<{isOpen: boolean}>`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    
+    gap: 20px;
+    transition: 0.6s;
   }
 
-  a {
-    color: ${theme.colors.text2};
+  ${props => props.isOpen && css<{isOpen: boolean}>`
+   transform: translateY(0);
+    & ul {
+      gap: 60px;
+    }
+  `}
+  
+  li {
+    z-index: 0;
+    position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 0px;
+        position: absolute;
+        background-color: ${theme.colors.accent};
+        bottom: 0px;
+        z-index: -1;
+        left: -10px;
+        right: -10px;
+        transition: ${theme.animations.transition};
+      }
+    &:hover{
+      &::before {
+        height: 10px;
+      }
+    }
   }
 `
+const NavLink = styled(Link)`
+    color: ${theme.colors.text2};
+`
+
 
 //DesktopMenu
 
@@ -101,6 +132,27 @@ const DesktopMenu = styled.nav`
     display: flex;
     justify-content: center;
     gap: 30px;
+  }
+  li {
+    z-index: 0;
+    position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 0px;
+        position: absolute;
+        background-color: ${theme.colors.accent};
+        bottom: 0px;
+        z-index: -1;
+        left: -10px;
+        right: -10px;
+        transition: ${theme.animations.transition};
+      }
+    &:hover, &.active {
+      &::before {
+       height: 10px;
+      }
+    }
   }
   
   a {
@@ -113,5 +165,6 @@ export const S = {
     MobileHeader,
     BurgerButton,
     MobileMenuWrapper,
-    DesktopMenu
+    DesktopMenu,
+    NavLink
 }

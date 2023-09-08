@@ -18,7 +18,10 @@ export const GlobalStyle = createGlobalStyle`
  }
  
  h2 {
-   text-shadow: 0px 0px 2px;
+   //text-shadow: 0px 0px 2px;
+ }
+ h1 {
+   font-weight: 400;
  }
  
 a { 
@@ -52,7 +55,7 @@ section:nth-of-type(odd) {
 }
 
 section:nth-of-type(even) {
-  background-color: ${theme.colors.primaryBg};
+  background-color: ${theme.colors.secondaryBg};
 }
 `
 

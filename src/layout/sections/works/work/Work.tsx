@@ -16,8 +16,10 @@ export const Work: React.FC<WorkPropsType> = (props: WorkPropsType) => {
                 <Button>In progress...</Button>
             </S.ImageWrapper>
 
-            <S.Tittle>{props.title}</S.Tittle>
-            <S.Text>{props.text}</S.Text>
+            <S.TextWrapper>
+                <S.Tittle>{props.title}</S.Tittle>
+                <S.Text>{props.text}</S.Text>
+            </S.TextWrapper>
         </S.Work>
     );
 };

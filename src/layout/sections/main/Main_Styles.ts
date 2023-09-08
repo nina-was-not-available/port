@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Main = styled.section`
   min-height: 100%;
   display: flex;
-  position: relative;
+  //position: relative;
 
 `
 const PhotoWrapper = styled.div`
@@ -14,6 +14,7 @@ const PhotoWrapper = styled.div`
   &::before {
     content: '';
     width: 350px;
+    //display: block;
     height: 430px;
     border: 12px solid ${theme.colors.text2};
     position: absolute;
@@ -21,12 +22,14 @@ const PhotoWrapper = styled.div`
     left: 30px;
     z-index: 2;
 
+
     @media ${theme.media.mobile} {
       width: 300px;
       height: 380px;
       bottom: 20px;
       left: 20px;
       border: 8px solid ${theme.colors.text2};
+
     }
   }
 
@@ -74,14 +77,23 @@ const TextWrapper = styled.div`
 `
 
 const Name = styled.h2`
-   ${font({weight: 700, fmax: 50, fmin: 36})};
+   ${font({weight: 700, fmax: 50, fmin: 36, color: theme.colors.text})};
 `
+
+
 const Hello = styled.span`
-  ${font({weight: 400, color: theme.colors.text, fmax: 30, fmin: 20})};
+  ${font({family: 'FreeMono', weight: 200, color: theme.colors.text, fmax: 25, fmin: 15})};
+  display: inline-block;
+  height: 150px;
+  line-height: 50px;
+  @media screen and (max-width: 738px){
+    height: 50px;
+    line-height: 20px;
+  }
 `
 const Junior = styled.span`
   ${font({weight: 400, color: theme.colors.text, fmax: 36, fmin: 28})};
-  span {
+  h1 {
     white-space: nowrap;
     position: relative;
     z-index: 0;
@@ -109,5 +121,6 @@ export const S = {
     TextWrapper,
     Name,
     Hello,
-    Junior
+    Junior,
+
 }

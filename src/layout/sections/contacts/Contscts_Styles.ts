@@ -20,10 +20,11 @@ const Form = styled.form`
 
 const Field = styled.input`
   width: 100%;
-  background-color: ${theme.colors.primaryBg};
-  border: 1px solid ${theme.colors.text};
+  position: relative;
+  background-color: ${theme.colors.text2};
+  border: none;
   padding: 7px 15px;
-  font-family: "Nimbus Sans";
+  font-family: FreeMono;
   font-weight: 500;
   font-size: 12px;
   color: ${theme.colors.text};

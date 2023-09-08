@@ -12,7 +12,7 @@ type FooterIconPropsType = {
 const FooterIcon: React.FC<FooterIconPropsType> = (props: FooterIconPropsType) => {
     return (
         <S.FooterIcon>
-        <svg width={props.width || '25px'} height={props.height || '25px'} viewBox={props.viewBox || '0 0 25 25'} fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width={props.width || '30'} height={props.height || '30'} viewBox={props.viewBox || '0 0 30 30'} fill="none" xmlns="http://www.w3.org/2000/svg">
             <use xlinkHref={`${iconsSprite}#${props.iconId}`}/>
         </svg>
         </S.FooterIcon>

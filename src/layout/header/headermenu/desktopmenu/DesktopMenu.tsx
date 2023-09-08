@@ -3,10 +3,10 @@ import {S} from './../HeaderMenu_Styles'
 import {Menu} from "../Menu/Menu";
 
 
-export const DesktopMenu: React.FC<{navigationItems: Array<string>}> = (props: {navigationItems: Array<string>}) => {
+export const DesktopMenu: React.FC = () => {
     return (
         <S.DesktopMenu>
-        <Menu navigationItems={props.navigationItems}/>
+        <Menu/>
         </S.DesktopMenu>
     );
 };

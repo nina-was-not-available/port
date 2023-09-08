@@ -12,7 +12,7 @@ import {S} from './About_Styles'
 const About: React.FC = () => {
     return (
 
-        <S.About>
+        <S.About id={'about'}>
             <SectionTitle>Let me introduce myself!</SectionTitle>
             <Conteiner>
                 <S.Parts>

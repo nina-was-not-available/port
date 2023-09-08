@@ -1,5 +1,4 @@
 import React from 'react';
-import {SectionTitle} from "../../components/SectionTitle";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import FooterIcon from "./footericon/FooterIcon";
 import {IconWrapper} from "../../components/IconWrapper";
@@ -22,11 +21,12 @@ const socialItemData = [
 ]
 
 
+
 const Footer = () => {
     return (
         <S.Footer>
             <FlexWrapper direction={'column'} align={'center'}>
-            <SectionTitle>Nina</SectionTitle>
+            <S.Nina>Nina</S.Nina>
             <S.SocialList>
                 {socialItemData.map((s, index) => {
                     return (<S.SocialItem key={index}>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
   background-color: ${theme.colors.text};
-  padding: 20px 0px;
+  padding: 10px 0px;
   position: sticky;
   top: 0;
   left: 0;

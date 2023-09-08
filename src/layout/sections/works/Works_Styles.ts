@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import theme from "../../styles/Theme";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {font} from "../../styles/Common";
 
+
 //Works
 
 const Works = styled.section`
+
  ${FlexWrapper} {
    gap: 20px;
  }
@@ -14,109 +16,98 @@ const Works = styled.section`
 //Work
 
 const Work = styled.div`
-  background-color: rgba(252, 218, 179, 0.76);
-  box-shadow: 0px 0px 10px;
+  background-image: linear-gradient(180deg, transparent 1%, ${theme.colors.text2} 90%);
+  position: relative;
   max-width: 400px;
   width: 100%;
   padding: 10px;
   @media ${theme.media.desktop} {
     max-width: 400px;
   }
+  @media screen and (max-width: 859px) {
+    background-image: linear-gradient(180deg, ${theme.colors.primaryBg} 1%, ${theme.colors.text2} 90%);
+  }
 `
 
 const ImageWrapper = styled.div `
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   filter: sepia(30%);
+  height: 230px;
+  width: 100%;
   
   ${Button} {
     opacity: 0;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-60%, -100%);
-
+    transform: translateY(20%);
+    transition: ${theme.animations.transition};
+    
     &::before{
       height: 40px;
       top: 0;
-      border: ${theme.colors.text2} solid 2px;
-      border-radius: 10px;
     }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(153, 55, 2, 0.29);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: ${theme.animations.transition};
   }
   
   &:hover {
     ${Button} {
       opacity: 1;
+      transform: translateY(0%);
     }
     &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 23px;
-      background-color: rgba(153, 55, 2, 0.29);
-      backdrop-filter: blur(3px);
+      opacity: 1;
     }
   }
-  
-   @media ${theme.media.tablet} {
-      ${Button} {
-  opacity: 1;
-}
-&::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 23px;
-  background-color: rgba(153, 55, 2, 0.29);
-  backdrop-filter: blur(3px);
-}
- `
+
+  @media ${theme.media.tablet} {
+    ${Button} {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    &::before {
+      opacity: 1;
+      
+    }
+  }
+`
 
 
 const Image = styled.img`
     width: 100%;
     height: 230px;
     object-fit: cover;
-  margin-bottom: 20px;
+  
  
 `
 
 const Tittle = styled.h3`
-  margin: 20px;
  ${font({weight: 600, fmax: 40, fmin: 30, color: theme.colors.text})};
-  position: relative;
-  display: inline;
-  z-index: 0;
-  &::before{
-    content:'';
-    display: inline-block;
-    width: 100%;
-    height: 20px;
-    left: 0px;
-    top: 25px;
-    border-radius: 0px;
-    background-color: ${theme.colors.accent};
-    position: absolute;
-    z-index: -1;
-    @media ${theme.media.tablet} {
-      height: 15px;
-    }
-  }
+  display: inline-block;
+  margin-bottom: 10px;
+`
+
+const TextWrapper = styled.div`
+ width: 100% ;
+  padding: 20px;
   @media ${theme.media.mobile} {
-    margin: 10px 0px;
+    padding: 10px;
   }
 `
 
 const Text = styled.p`
-    margin: 20px;
-  ${font({weight: 400, fmax: 25, fmin: 15, color: theme.colors.text, family: 'Waree'})};
-  @media ${theme.media.mobile} {
-    margin: 10px 0px;
-  }
-  
+  ${font({weight: 400, fmax: 20, fmin: 12, color: theme.colors.text, family: 'Waree'})};
 `
 
 //WorksNavigation
@@ -131,25 +122,40 @@ const WorksNavigation = styled.nav`
   
   a {
     color: ${theme.colors.text2};
+    
   }
 `
 const ListItem = styled.li`
-    position: relative;
+
 `
-const Link = styled.a`
-  &:hover {
+const Link = styled.a<{active: boolean}>`
+  z-index: 0;
+  position: relative;
     &::before {
       content: '';
       display: inline-block;
-      height: 2px;
+      height: 0px;
+      transition: ${theme.animations.transition};
       position: absolute;
       background-color: ${theme.colors.accent};
-      bottom: 10px;
+      bottom: 0px;
+      z-index: -1;
       left: -10px;
       right: -10px;
-    }
-  }
-`
+
+      ${props => props.active && css<{active:boolean}>`
+          height: 10px;
+      `}
+      }
+      &:hover {
+        &::before {
+          height: 10px;
+        }
+      }
+      `
+
+
+
 
 
 export const S = {
@@ -161,5 +167,6 @@ export const S = {
     Text,
     WorksNavigation,
     Link,
-    ListItem
+    ListItem,
+    TextWrapper
 }

@@ -9,6 +9,7 @@ const Slider = styled.section`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  
 `
 
 
@@ -53,12 +54,13 @@ const Slide = styled.div<SlidePropsType>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(${props => props.pic});
-  background-size: cover;
+  // background-image: url(${props => props.pic});
+  // background-size: cover;
+  background-image: radial-gradient(transparent 1%, ${theme.colors.text2} 90%);
   position: relative;
   &:hover {
     scale: 1.25;
-    transition: .5s;
+    transition: scale .6s;
     box-shadow: 0px 0px 20px;
     z-index: 1;
     
@@ -79,7 +81,7 @@ const Img = styled.img`
   width: 100%;
   padding: 20%;
   opacity: 0.7;
-  transition: .9s;
+  transition: opacity .3s;
   &:hover {
     opacity: 0;
   }

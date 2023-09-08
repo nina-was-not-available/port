@@ -32,18 +32,19 @@ const Strelka = styled.div`
   opacity: 0.7;
   display: flex;
   top: 70px;
-  left: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 50%;
-  position: relative;
+  position: absolute;
 
   &::before {
     content: '';
     width: 12px;
     height: 12px;
     position: absolute;
-    transform: rotate(225deg);
-    border-top: 4px solid ${theme.colors.accent};
-    border-left: 4px solid ${theme.colors.accent};
+    transform: rotate(224deg);
+    border-top: 3px solid ${theme.colors.accent};
+    border-left: 3px solid ${theme.colors.accent};
     top: 12px;
     left: 14px;
   }
@@ -52,7 +53,7 @@ const Strelka = styled.div`
 
 const Part = styled.div<StyledPart1PropsType>`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   opacity: 1;
   font-size: 1.5rem;
   font-weight: 500;
@@ -60,12 +61,12 @@ const Part = styled.div<StyledPart1PropsType>`
   height: 250px;
   background-image: url(${props => props.img});
   background-size: cover;
-  box-shadow: 0px 0px 10px;
-  transition: .3s;
+  transition: ${theme.animations.transition};
   position: relative;
   overflow: hidden; 
   padding-top: 10px;
-  border-radius: 30px;
+  flex-direction: column;
+  align-items: center;
   filter: sepia(30%);
   &:hover {
     height: 500px;
@@ -74,10 +75,12 @@ const Part = styled.div<StyledPart1PropsType>`
 
 
 const Text = styled.h3`
-    margin: 10px;
-  left: -15px;
+    margin: 10px 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-weight: bold;
-  position: relative;
+  position: absolute;
     z-index: 0;
     &::after{
       content:'';
@@ -90,25 +93,19 @@ const Text = styled.h3`
       position: absolute;
       z-index: -1;
     }
-  
-  
-  
 `
 const Description = styled.p`
   text-align: start;
   position: absolute;
-  display: flex;
-  align-items: flex-end;
   padding: 10px;
-  top: 250px;
-  left: 0px;
-  right: 0px;
   font-size: 20px;
   font-weight: 400;
   max-width: 250px;
   width: 100%;
-  height: 250px;
-  border-radius: 0px 0px 30px 30px;
+  max-height: 250px;
+  height: 100%;
+  transform: translateY(250px);
+  transition: ${theme.animations.transition};
   background-image: linear-gradient(to top, ${theme.colors.accent} 40%, transparent);
 `
 
