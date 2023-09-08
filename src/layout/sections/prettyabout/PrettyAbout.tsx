@@ -10,7 +10,7 @@ import Slider from "../../../components/slider/Slider";
 
 const PrettyAbout: React.FC = () => {
     return (
-        <StyledPrettyAbout>
+        <StyledPrettyAbout id={'about'}>
             <Conteiner>
                 <SectionTitle>Let me introduce myself!</SectionTitle>
                 <FlexWrapper align={'center'} justify={'center'}>

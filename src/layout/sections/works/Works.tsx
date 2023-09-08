@@ -6,7 +6,8 @@ import socialImg from './../../../assets/images/social-network.webp'
 import todoImg from './../../../assets/images/todolist.webp'
 import Conteiner from "../../../components/Conteiner";
 import WorksNavigation, {NavigationStatusType} from "./WorksNavigation/WorksNavigation";
-import {S} from './Works_Styles'
+import {S} from './Works_Styles';
+import social2 from './../../../assets/images/social-network.jpg'
 
 
 const NavigationItems: Array<{title: string, status: NavigationStatusType}> = [
