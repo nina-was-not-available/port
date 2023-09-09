@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/port/static/css/main.170c9302.css",
-    "main.js": "/port/static/js/main.ceb9d508.js",
+    "main.js": "/port/static/js/main.79366ebc.js",
     "static/js/787.c5153d3d.chunk.js": "/port/static/js/787.c5153d3d.chunk.js",
     "static/media/image_part_005.png": "/port/static/media/image_part_005.9faf0f889faf9ca335fb.png",
     "static/media/image_part_001.png": "/port/static/media/image_part_001.0e63610ff36e80be1715.png",
     "static/media/image_part_006.png": "/port/static/media/image_part_006.7487384e4f6746e98b3e.png",
     "static/media/image_part_003.png": "/port/static/media/image_part_003.427859ab1af8e7ec0b9c.png",
-    "static/media/social-network.webp": "/port/static/media/social-network.eba62372e026b682e49e.webp",
     "static/media/image_part_004.png": "/port/static/media/image_part_004.4ce1ace625adcbbeaa15.png",
     "static/media/image_part_002.png": "/port/static/media/image_part_002.5d2e39733fdea1e9b554.png",
-    "static/media/todolist.webp": "/port/static/media/todolist.a4fd1b7216e52492ba1d.webp",
+    "static/media/time-organization-concept-close-up.jpg": "/port/static/media/time-organization-concept-close-up.317623c5fc3bf0d84236.jpg",
+    "static/media/social-network.jpg": "/port/static/media/social-network.b3e48b2e8904d98ec491.jpg",
     "static/media/sprite.svg": "/port/static/media/sprite.2ff7cb010b041c76a24827cb96794117.svg",
     "static/media/reactpng.png": "/port/static/media/reactpng.1830e7992c2004bdae2e.png",
     "static/media/my-photo.webp": "/port/static/media/my-photo.3a93d402a45be92b7857.webp",
@@ -21,11 +21,11 @@
     "static/media/enpng.png": "/port/static/media/enpng.c3b4f767f86bc8eb4c2e.png",
     "index.html": "/port/index.html",
     "main.170c9302.css.map": "/port/static/css/main.170c9302.css.map",
-    "main.ceb9d508.js.map": "/port/static/js/main.ceb9d508.js.map",
+    "main.79366ebc.js.map": "/port/static/js/main.79366ebc.js.map",
     "787.c5153d3d.chunk.js.map": "/port/static/js/787.c5153d3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.170c9302.css",
-    "static/js/main.ceb9d508.js"
+    "static/js/main.79366ebc.js"
   ]
 }
