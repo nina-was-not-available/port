@@ -22,7 +22,10 @@ const Kinopoisk = styled.div`
   align-items: center;
   margin: 0 auto;
   position: relative;
-  gap: 20px;
+  gap: 25px;
+  @media ${theme.media.mobile} {
+    gap: 20px;
+  }
 `
 
 const SomeText = styled.div`
@@ -44,7 +47,7 @@ const SomeText = styled.div`
 `
 
 type SlidePropsType = {
-    pic: string
+    pic?: string
 }
 
 
@@ -56,18 +59,22 @@ const Slide = styled.div<SlidePropsType>`
   justify-content: center;
   // background-image: url(${props => props.pic});
   // background-size: cover;
-  background-image: radial-gradient(transparent 1%, ${theme.colors.text2} 90%);
+  background-image: radial-gradient(${theme.colors.primaryBg} 10%, ${theme.colors.text2} 90%);
   position: relative;
+  z-index: 0;
+ 
   &:hover {
-    scale: 1.25;
+    scale: 1.2;
     transition: scale .6s;
-    box-shadow: 0px 0px 20px;
+    box-shadow: 0px 0px 10px;
     z-index: 1;
+    background-color: ${theme.colors.text};
+    opacity: 0.8;
     
+    background-image: none;
     
     ${SomeText} {
       opacity: 1;
-      backdrop-filter: brightness(30%);
     }
   }
   
@@ -86,6 +93,8 @@ const Img = styled.img`
     opacity: 0;
   }
 `
+
+
 export const S = {
     Kinopoisk,
     SomeText,

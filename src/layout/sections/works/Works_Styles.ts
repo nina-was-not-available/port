@@ -18,12 +18,7 @@ const Works = styled.section`
 const Work = styled.div`
   background-image: linear-gradient(180deg, transparent 1%, ${theme.colors.text2} 90%);
   position: relative;
-  max-width: 400px;
-  width: 100%;
   padding: 10px;
-  @media ${theme.media.desktop} {
-    max-width: 400px;
-  }
   @media screen and (max-width: 859px) {
     background-image: linear-gradient(180deg, ${theme.colors.primaryBg} 1%, ${theme.colors.text2} 90%);
   }
@@ -34,7 +29,7 @@ const ImageWrapper = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: sepia(30%);
+  filter: sepia(20%);
   height: 230px;
   width: 100%;
   
@@ -107,7 +102,7 @@ const TextWrapper = styled.div`
 `
 
 const Text = styled.p`
-  ${font({weight: 400, fmax: 20, fmin: 12, color: theme.colors.text, family: 'Waree'})};
+  ${font({weight: 400, fmax: 18, fmin: 12, color: theme.colors.text, family: 'Waree'})};
 `
 
 //WorksNavigation

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import theme from "../../styles/Theme";
 
+
 const Contacts = styled.section`
 `
 const Form = styled.form`
@@ -23,15 +24,17 @@ const Field = styled.input`
   position: relative;
   background-color: ${theme.colors.text2};
   border: none;
+  outline: none;
   padding: 7px 15px;
   font-family: FreeMono;
   font-weight: 500;
   font-size: 12px;
   color: ${theme.colors.text};
   &:focus-visible {
-  outline: 2px solid ${theme.colors.accent};
+  border: 2px solid ${theme.colors.text};
 }
 `
+
 
 export const S = {
     Contacts,

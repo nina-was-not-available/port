@@ -12,24 +12,35 @@ import scpng from './../../../../assets/images/skills1/scpng.png';
 import enpng from './../../../../assets/images/skills1/enpng.png';
 import jspng from './../../../../assets/images/skills1/noun-js-4882515.png';
 import {S} from './../Skill_Styles'
-
+import {Fade} from "react-awesome-reveal";
+import './../../../styles/fade.css'
 
 
 const Kinopoisk: React.FC = () => {
     return (
         <S.Kinopoisk>
-            <S.Slide pic={first}><S.Img src={reactpng}/><S.SomeText>Today I can only "Create React App", but I believe it won't for long</S.SomeText></S.Slide>
-            <S.Slide pic={second}><S.Img src={scpng}/><S.SomeText>I've already got to know "Styled Components", and it's really convenient!</S.SomeText></S.Slide>
-            <S.Slide pic={third}><S.Img src={htmlpng}/><S.SomeText>I've studied HTML in college, but it was a piece of a subject "Musical Informatics" </S.SomeText></S.Slide>
-            <S.Slide pic={forth}><S.Img src={csspng}/><S.SomeText>In the "Musical Informatics" we've been writing some articles about modern musicians</S.SomeText></S.Slide>
-            <S.Slide pic={fifth}><S.Img src={enpng}/><S.SomeText>I'm learning English all my life and now I'm in B2 level</S.SomeText></S.Slide>
-            <S.Slide pic={sixth}><S.Img src={jspng}/><S.SomeText>My favourite book is "Java Script for children"</S.SomeText></S.Slide>
+            <Fade cascade={true} damping={0.1} triggerOnce={false}>
+                <S.Slide pic={first}><S.Img src={reactpng}/><S.SomeText> Today I can only "Create React App", but I
+                    believe it won't be for long</S.SomeText>
+                </S.Slide>
+                <S.Slide pic={second}><S.Img src={scpng}/><S.SomeText>I've already got to know "Styled Components", and
+                    it's really
+                    convenient!</S.SomeText></S.Slide>
+                <S.Slide pic={third}><S.Img src={htmlpng}/><S.SomeText>I've studied HTML in college, but it was a piece
+                    of a subject
+                    "Musical Informatics" </S.SomeText></S.Slide>
+                <S.Slide pic={forth}><S.Img src={csspng}/><S.SomeText>In the "Musical Informatics" we've been writing
+                    some articles
+                    about modern musicians</S.SomeText></S.Slide>
+                <S.Slide pic={fifth}><S.Img src={enpng}/><S.SomeText>I'm learning English all my life and now I'm in B2
+                    level</S.SomeText></S.Slide>
+                <S.Slide pic={sixth}><S.Img src={jspng}/><S.SomeText>My favourite book is "Java Script for
+                    children"</S.SomeText></S.Slide>
+            </Fade>
         </S.Kinopoisk>
-    );
+    )
+        ;
 };
-
-
-
 
 
 export default Kinopoisk

@@ -4,8 +4,7 @@ import Conteiner from "../../../components/Conteiner";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import Slider from "../../../components/slider/Slider";
-
-
+import {Fade} from "react-awesome-reveal";
 
 
 const PrettyAbout: React.FC = () => {
@@ -14,7 +13,7 @@ const PrettyAbout: React.FC = () => {
             <Conteiner>
                 <SectionTitle>Let me introduce myself!</SectionTitle>
                 <FlexWrapper align={'center'} justify={'center'}>
-                <Slider/>
+                        <Slider/>
                 </FlexWrapper>
             </Conteiner>
         </StyledPrettyAbout>

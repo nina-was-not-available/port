@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import Work from "./work/Work";
-import socialImg from './../../../assets/images/social-network.webp'
-import todoImg from './../../../assets/images/todolist.webp'
+import socialImg from './../../../assets/images/social-network.jpg'
+import todoImg from './../../../assets/images/time-organization-concept-close-up.jpg'
 import Conteiner from "../../../components/Conteiner";
 import WorksNavigation, {NavigationStatusType} from "./WorksNavigation/WorksNavigation";
 import {S} from './Works_Styles';
-import social2 from './../../../assets/images/social-network.jpg'
+import {AnimatePresence, motion} from "framer-motion";
+
 
 
 const NavigationItems: Array<{title: string, status: NavigationStatusType}> = [
@@ -34,13 +35,15 @@ const worksData = [
         title: 'Social Network',
         src: socialImg,
         text: 'It seems too difficult, but so interesting!',
-        type: 'spa'
+        type: 'spa',
+        id: 1
     },
     {
         title: 'To Do List',
         src: todoImg,
         text: "Almost every student talks about it!",
-        type: 'react'
+        type: 'react',
+        id: 2
     }
 ]
 
@@ -67,9 +70,16 @@ export const Works: React.FC = () => {
             <SectionTitle>My future works</SectionTitle>
             <WorksNavigation navigationItems={NavigationItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}/>
             <FlexWrapper justify={'space-around'} wrap={'wrap'}>
+                <AnimatePresence>
                 {filtredWorks.map((w)=> {
-                    return <Work title={w.title} text={w.text} src={w.src}/>
+                    return (
+                        <motion.div style={{maxWidth: '400px', width: '400px', flexGrow: 1}}
+                            initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} key={w.id} layout={true}>
+                        <Work title={w.title} text={w.text} src={w.src} key={w.id}/>
+                        </motion.div>
+                    );
                 })}
+                </AnimatePresence>
             </FlexWrapper>
             </Conteiner>
         </S.Works>

@@ -2,14 +2,17 @@ import React from 'react';
 import Kinopoisk from "./kinopoisk/Kinopoisk";
 import {SectionTitle} from "../../../components/SectionTitle";
 import Conteiner from "../../../components/Conteiner";
-import {S} from './Skill_Styles'
+import {S} from './Skill_Styles';
+import { Fade } from 'react-awesome-reveal';
 
 export const Skills: React.FC = () => {
     return (
         <S.Slider id={'skills'}>
             <Conteiner>
-            <SectionTitle>My potential skills</SectionTitle>
-            <Kinopoisk/>
+                <SectionTitle>My potential skills</SectionTitle>
+
+                    <Kinopoisk/>
+
             </Conteiner>
         </S.Slider>
     );

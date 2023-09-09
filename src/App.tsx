@@ -10,6 +10,7 @@ import About from "./layout/sections/about/About";
 import {Particle} from "./components/particle/Particle";
 import GoTopBtn from "./components/goTopBtn/GoTopBtn";
 import PrettyAbout from "./layout/sections/prettyabout/PrettyAbout";
+import {Fade} from "react-awesome-reveal";
 
 
 
@@ -18,6 +19,7 @@ function App() {
   return (
       <div className="App">
           <Particle/>
+
           <Header/>
           <Main/>
           {/*<About/>*/}
@@ -26,6 +28,7 @@ function App() {
           <Works/>
           <Contacts/>
           <Footer/>
+
           <GoTopBtn/>
       </div>
   );
